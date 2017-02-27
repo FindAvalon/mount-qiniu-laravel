@@ -1,0 +1,37 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateMountRecordsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('mount_records', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name')->comment('名称');
+            $table->text('filename')->comment('文件名');
+            $table->text('origin_data')->comment('原始数据');
+            $table->text('mounted_data')->comment('编译后数据');
+            $table->integer('index')->comment('索引');
+            $table->tinyInteger('status')->comment('状态1有效0无效');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('mount_records');
+    }
+}
