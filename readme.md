@@ -1,4 +1,4 @@
-#Mount
+#Mount(Laravel编译前端同步至七牛云)
 
 ##安装与配置
 
